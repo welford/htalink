@@ -18,7 +18,7 @@ function findParentWithClass(node,classNames) {
 }
 
 function trapLinks(doc) {
-	doc.addEventListener("click",function(event) {		
+	doc.addEventListener("click",function(event) {
 		//leave this here for now incase it is useful later
 		// See if we're in an interwiki link
 		//var interwikiLink = findParentWithClass(event.target,"tw-interwiki-link");		

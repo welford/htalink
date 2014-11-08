@@ -2,8 +2,6 @@
 	"title": "$:/plugins/welford/htalink",
 	"description": "Catches links in HTA",
 	"author": "James W. Anderson",
-	"version": "0.0.1",
-	"core-version": ">=5.0.0",
-	"source": "https://github.com/Welford/htalink",
-	"plugin-type": "plugin"
+    "core-version": ">=5.0.0",
+    "list": "readme"
 }

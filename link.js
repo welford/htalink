@@ -16,11 +16,11 @@ catches links in hta and opens them in the default browser
 // Export name and synchronous status
 exports.name = "htalink";
 exports.platforms = ["browser"];
+exports.before = ["startup"];
 exports.synchronous = true;
 
 
 exports.startup = function() {		
-
 	function findParentWithClass(node,classNames) {
 		classNames = classNames.split(" ");
 		while(node) {
@@ -40,7 +40,7 @@ exports.startup = function() {
 		doc.addEventListener("click",function(event) {
 			//leave this here for now incase it is useful later
 			// See if we're in an interwiki link
-			//var interwikiLink = findParentWithClass(event.target,"tw-interwiki-link");		
+			//var interwikiLink = findParentWithClass(event.target,"tc-interwiki-link");		
 			//if(interwikiLink) {
 				//openWikiIfNotOpen(interwikiLink.href);
 				//event.preventDefault();
@@ -49,8 +49,8 @@ exports.startup = function() {
 				//alert("derp");
 			//}
 			// See if we're in an external link
-			// "tw-tiddlylink-external" is for TW5, "externallink" for TWC
-			var externalLink = findParentWithClass(event.target,"tw-tiddlylink-external externalLink");
+			// "tc-tiddlylink-external" is for TW5, "externallink" for TWC
+			var externalLink = findParentWithClass(event.target,"tc-tiddlylink-external externalLink");
 			if(externalLink) {
 				try{
 					var shell = new ActiveXObject("WScript.Shell");
